@@ -17,16 +17,16 @@
     </a>
     <div class="col-xs-12 col-md-3 d-flex align-items-center">
       <a class="nav-link text-white fs-5 text-center" href="./listaClinicas.html">Clínicas próximas</a>
-    </div> 
+    </div>
     <div class="col-xs-12 col-md-3 d-flex align-items-center">
       <a class="nav-link text-white fs-5 text-center" href="./agendamento.html">Agendar consulta</a>
-    </div> 
+    </div>
     <div class="col-xs-12 col-md-3 d-flex align-items-center">
       <a class="nav-link text-white fs-5 text-center" href="#">
         Login/Cadastro
         <img src="../imgs/user.png" alt="Login ou cadastro" width="40" height="40">
       </a>
-    </div> 
+    </div>
   </nav>
 
   <div class="container mt-5">
@@ -83,58 +83,58 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-document.addEventListener('DOMContentLoaded', function () {
-  var agendamentos = []; // Array para armazenar os agendamentos
+    document.addEventListener('DOMContentLoaded', function () {
+      var agendamentos = []; // Array para armazenar os agendamentos
 
-  document.getElementById('form-agendamento').addEventListener('submit', function (event) {
-    event.preventDefault(); // Evita que o formulário seja enviado
+      document.getElementById('form-agendamento').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evita que o formulário seja enviado
 
-    // Captura os valores dos campos do formulário
-    var nome = document.getElementById('nome').value;
-    var idade = document.getElementById('idade').value;
-    var motivo = document.getElementById('motivo').value;
-    var medico = document.getElementById('medico').value;
-    var horario = document.getElementById('horario').value;
+        // Captura os valores dos campos do formulário
+        var nome = document.getElementById('nome').value;
+        var idade = document.getElementById('idade').value;
+        var motivo = document.getElementById('motivo').value;
+        var medico = document.getElementById('medico').value;
+        var horario = document.getElementById('horario').value;
 
-    // Cria um objeto com os dados do agendamento
-    var agendamento = {
-      nome: nome,
-      idade: idade,
-      motivo: motivo,
-      medico: medico,
-      horario: horario
-    };
+        // Cria um objeto com os dados do agendamento
+        var agendamento = {
+          nome: nome,
+          idade: idade,
+          motivo: motivo,
+          medico: medico,
+          horario: horario
+        };
 
-    // Insere o objeto agendamento no array
-    agendamentos.push(agendamento);
+        // Insere o objeto agendamento no array
+        agendamentos.push(agendamento);
 
-    // Atualiza a lista de agendamentos na página
-    atualizarListaAgendamentos();
-    mostrarAgendamento();
-  });
+        // Atualiza a lista de agendamentos na página
+        atualizarListaAgendamentos();
+        mostrarAgendamento();
+      });
 
-  // Função para atualizar a lista de agendamentos na página
-  function atualizarListaAgendamentos() {
-    var listaAgendamentos = document.getElementById('lista-agendamentos');
-    listaAgendamentos.innerHTML = ''; // Limpa a lista antes de adicionar os itens        
+      // Função para atualizar a lista de agendamentos na página
+      function atualizarListaAgendamentos() {
+        var listaAgendamentos = document.getElementById('lista-agendamentos');
+        listaAgendamentos.innerHTML = ''; // Limpa a lista antes de adicionar os itens        
 
-    // Adiciona cada agendamento como um item de lista
-    agendamentos.forEach(function (agendamento, index) {
-      var itemLista = document.createElement('li');
-      itemLista.textContent = `Nome: ${agendamento.nome}, Idade: ${agendamento.idade}, Motivo: ${agendamento.motivo}, Médico: ${agendamento.medico}, Horário: ${agendamento.horario}`;
-      listaAgendamentos.appendChild(itemLista);
+        // Adiciona cada agendamento como um item de lista
+        agendamentos.forEach(function (agendamento, index) {
+          var itemLista = document.createElement('li');
+          itemLista.textContent = `Nome: ${agendamento.nome}, Idade: ${agendamento.idade}, Motivo: ${agendamento.motivo}, Médico: ${agendamento.medico}, Horário: ${agendamento.horario}`;
+          listaAgendamentos.appendChild(itemLista);
+        });
+      }
+
+      function mostrarAgendamento() {
+        if (agendamentos.length > 0) { // Corrigindo "lenght" para "length"
+          const step1 = document.getElementById('step1');
+          const step2 = document.getElementById('step2');
+          step1.classList.add('d-none');
+          step2.classList.remove('d-none');
+        }
+      }
     });
-  }
-
-  function mostrarAgendamento() {
-    if (agendamentos.length > 0) { // Corrigindo "lenght" para "length"
-      const step1 = document.getElementById('step1');
-      const step2 = document.getElementById('step2');
-      step1.classList.add('d-none');
-      step2.classList.remove('d-none');
-    }
-  }
-});
   </script>
 </body>
 
