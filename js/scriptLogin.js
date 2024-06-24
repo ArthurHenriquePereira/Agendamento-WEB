@@ -16,8 +16,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         if (user) {
             console.log('Login bem-sucedido');
+            if(user.tipo == 'medico'){
+                window.location.href = 'medico.html';
+            }
+            if(user.tipo == 'paciente'){
+                window.location.href = 'paciente.html';
+            }
+            if(user.tipo == 'secretaria'){
+                window.location.href = 'adm.html';
+            }
             // Redirecionar para index.html
-            window.location.href = 'index.html';
+            //window.location.href = 'index.html';
         } else {
             console.log('Usuário ou senha incorretos');
             Toastify({
@@ -75,3 +84,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         loginForm.parentElement.classList.remove('hidden');
     });
 });
+
+function mascaraNumero(){
+    $('#telefone').mask('(00) 00000-0000');
+}
