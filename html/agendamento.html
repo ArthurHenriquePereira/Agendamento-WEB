@@ -78,7 +78,7 @@
   <!-- Lista para mostrar os agendamentos -->
   <div class="container mt-5 d-none" id="step2">
     <h3>Confirmação de agendamento</h3>
-    <ul id="lista-agendamentos"></ul>
+    <ul id="lista-agendamentos" style="list-style:none;padding-left:0px;"></ul>
   </div>
 
   <!-- Link para o Bootstrap JS (opcional, caso queira usar componentes JavaScript do Bootstrap) -->
@@ -123,7 +123,19 @@
         // Adiciona cada agendamento como um item de lista
         agendamentos.forEach(function (agendamento, index) {
           var itemLista = document.createElement('li');
-          itemLista.textContent = `Nome: ${agendamento.nome}, Idade: ${agendamento.idade}, Motivo: ${agendamento.motivo}, Médico: ${agendamento.medico}, Horário: ${agendamento.horario}`;
+          itemLista.textContent = `Nome: ${agendamento.nome}`;
+          listaAgendamentos.appendChild(itemLista);
+          var itemLista = document.createElement('li');
+          itemLista.textContent = `Idade: ${agendamento.idade}`;
+          listaAgendamentos.appendChild(itemLista);
+          var itemLista = document.createElement('li');
+          itemLista.textContent = `Motivo: ${agendamento.motivo}`;
+          listaAgendamentos.appendChild(itemLista);
+          var itemLista = document.createElement('li');
+          itemLista.textContent = `Médico: ${agendamento.medico}`;
+          listaAgendamentos.appendChild(itemLista);
+          var itemLista = document.createElement('li');
+          itemLista.textContent = `Horário: ${agendamento.horario}`;
           listaAgendamentos.appendChild(itemLista);
         });
 
